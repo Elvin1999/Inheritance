@@ -21,13 +21,30 @@ namespace InheritenceHomework
             Console.WriteLine("Can Save in Pro and Expert versions");
         }
     }
-    class ProDocument : Document { }
-    class ExpertDocument : ProDocument { }
+    class ProDocument : Document
+    {
+        public sealed override void EditDocument()
+        {
+            Console.WriteLine("ProDocument Edited");
+        }
+        public override void SaveDocument()
+        {
+            Console.WriteLine(" Document Saved in doc format, for pdf format buy Expert packet");
+        }
+    }
+    class ExpertDocument : ProDocument {
+        public override void SaveDocument()
+        {
+            Console.WriteLine("Document Saved in pdf format");
+        }
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
+            Document document;
+
         }
     }
 }
